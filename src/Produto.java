@@ -1,10 +1,10 @@
 public class Produto {
     String nome;
     int quantidade;
-    int preco;
+    double preco;
     Data dataDeValidade;
 
-    public Produto(String nome, int quantidade, int preco, Data dataDeValidade) throws Exception {
+    public Produto(String nome, int quantidade, double preco, Data dataDeValidade) throws Exception {
         this.setNome(nome);
         try {
             this.setQuantidade(quantidade);
@@ -19,8 +19,10 @@ public class Produto {
         this.setDataDeValidade(dataDeValidade);        
     }
 
+    
+
     public String toString() {
-        return this.nome + " - " + this.quantidade + " - " + this.preco + " - " + this.dataDeValidade;
+        return "Nome: " + this.nome + " - Quantidade: " + this.quantidade + " - Preço: " + this.preco + " - Validade: " + this.dataDeValidade;
     }
 
     public String getNome() {
@@ -31,7 +33,7 @@ public class Produto {
         return this.quantidade;
     }
 
-    public int getPreco() {
+    public double getPreco() {
         return this.preco;
     }
 
@@ -50,11 +52,11 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public void setPreco(int preco) throws Exception {
-        if (preco < 0) {
+    public void setPreco(double preco2) throws Exception {
+        if (preco2 < 0) {
             throw new Exception("Preço inválido");
         }
-        this.preco = preco;
+        this.preco = preco2;
     }
 
     public void setDataDeValidade(Data dataDeValidade) {
